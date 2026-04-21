@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form method="POST" action='{% url "register" %}' enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <!-- Name -->
+        <label>Name:</label><br>
+        <input type="text" name="name" maxlength="100" required><br><br>
+
+        <!-- Date -->
+        <label>Date:</label><br>
+        <input type="date" name="date_field" required><br><br>
+
+        <!-- Time -->
+        <label>Time:</label><br>
+        <input type="time" name="time_field" required><br><br>
+
+        <!-- DateTime -->
+        <label>Date & Time:</label><br>
+        <input type="datetime-local" name="datetime_field" required><br><br>
+
+        <!-- Image -->
+        <label>Upload Image:</label><br>
+        <input type="file" name="image" accept="image/*" required><br><br>
+
+        <!-- Resume -->
+        <label>Upload Resume:</label><br>
+        <input type="file" name="resume" required><br><br>
+
+        <!-- Submit -->
+        <button type="submit">Register</button>
+
+    </form>
+
+</body>
+</html>
